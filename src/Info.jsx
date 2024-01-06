@@ -33,30 +33,30 @@ const Info = () => {
         {!individualData.name ? (
           <h1 className="text-2xl mt-6"></h1>
         ) : (
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-4 rounded-lg sticky text-gray-100 mt-5 lg:w-1/4 lg:h-1/4 text-center flex justify-center items-center flex-col">
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-4 font-semibold rounded-lg sticky text-gray-100 mt-5 lg:w-1/4 lg:h-1/4 text-center flex justify-center items-center flex-col">
             <img src={individualData.img} alt="" width={200} height={200} />
 
-            <h1 className="text-xl mt-2">Name: {individualData.name}</h1>
-            <div className="text-xl mt-2">
+            <h1 className="text-2xl mt-2">Name: {individualData.name}</h1>
+            <div className="text-2xl mt-2">
               Stats:{" "}
               {individualData.stats ? (
                 individualData.stats
               ) : (
-                <span>Nothing to show</span>
+                <span className="text-2xl">Nothing to show</span>
               )}
             </div>
-            <h1 className="text-xl mt-2">
+            <h1 className="text-2xl mt-2">
               Abilities:{" "}
               {individualData.abilities ? (
                 individualData.abilities.toString()
               ) : (
-                <span>Nothing to show</span>
+                <span className="text-2xl">Nothing to show</span>
               )}
             </h1>
-            <h1 className="text-xl mt-2">HP: {individualData.hp}</h1>
-            <h1 className="text-xl mt-2">Attacks: {individualData.attack}</h1>
-            <h1 className="text-xl mt-2">Type: {individualData.type}</h1>
-            <h1 className="text-xl mt-2">Defence: {individualData.defence}</h1>
+            <h1 className="text-2xl mt-2">HP: {individualData.hp}</h1>
+            <h1 className="text-2xl mt-2">Attacks: {individualData.attack}</h1>
+            <h1 className="text-2xl mt-2">Type: {individualData.type}</h1>
+            <h1 className="text-2xl mt-2">Defence: {individualData.defence}</h1>
           </div>
         )}
       </div>
