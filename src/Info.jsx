@@ -28,16 +28,21 @@ const Info = () => {
   });
 
   return (
-    <div className="h-screen bg-gray-900">
+    <div className="h-screen bg-[#222831]">
       <div className={`flex justify-center items-center`}>
         {!individualData.name ? (
           <h1 className="text-2xl mt-6"></h1>
         ) : (
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-4 font-semibold rounded-lg sticky text-gray-100 mt-5 lg:w-1/4 lg:h-1/4 text-center flex justify-center items-center flex-col">
-            <img src={individualData.img} alt="" width={200} height={200} />
+          <div className=" px-3 py-4 bg-[#31363F] text-[#76ABAE] font-semibold rounded-lg sticky  mt-5 lg:w-1/4 lg:h-1/4 text-center flex justify-center items-center flex-col">
+            <div className="bg-[#76ABAE] rounded-full">
+              <img src={individualData.img} alt="" width={200} height={200} />
+            </div>
 
-            <h1 className="text-2xl mt-2">Name: {individualData.name}</h1>
-            <div className="text-2xl mt-2">
+            <h1 className="text-2xl mt-2 text-center capitalize">
+              {" "}
+              {individualData.name}
+            </h1>
+            {/* <div className="text-2xl mt-2">
               Stats:{" "}
               {individualData.stats ? (
                 individualData.stats
@@ -52,11 +57,25 @@ const Info = () => {
               ) : (
                 <span className="text-2xl">Nothing to show</span>
               )}
-            </h1>
-            <h1 className="text-2xl mt-2">HP: {individualData.hp}</h1>
-            <h1 className="text-2xl mt-2">Attacks: {individualData.attack}</h1>
-            <h1 className="text-2xl mt-2">Type: {individualData.type}</h1>
-            <h1 className="text-2xl mt-2">Defence: {individualData.defence}</h1>
+            </h1> */}
+            <div className="grid grid-cols-2">
+              <div className="flex space-x-4">
+                <div className="text-lg mt-2 text-center">
+                  <p className="text-xl">HP</p> {individualData.hp}
+                </div>
+                <div className="text-lg mt-2 text-center">
+                  <p className="text-xl">Attacks</p> {individualData.attack}
+                </div>
+              </div>
+              <div className="flex space-x-4">
+                <div className="text-lg mt-2 text-center">
+                  <p className="text-xl">Type</p> {individualData.type}
+                </div>
+                <h1 className="text-lg mt-2 text-center">
+                  <p className="text-xl">Defence</p> {individualData.defence}
+                </h1>
+              </div>
+            </div>
           </div>
         )}
       </div>

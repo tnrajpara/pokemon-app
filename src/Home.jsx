@@ -23,8 +23,8 @@ function Home() {
   const [filterdData, setFilterdData] = React.useState([]);
 
   const nextData = () => {
-    const temp = `https://pokeapi.co/api/v2/pokemon/?offset=${plus}&limit=20`;
-    setPlus((plus) => plus + 20);
+    const temp = `https://pokeapi.co/api/v2/pokemon/?offset=${plus}&limit=40`;
+    setPlus((plus) => plus + 40);
     setNext(temp);
     console.log(next);
   };
@@ -95,21 +95,22 @@ function Home() {
     });
     setFilterdData(filterData);
     console.log(individualData.type);
+    console.log(individualData.name);
   }, [searchInput]);
 
   return (
     <>
-      <div className="bg-gray-900">
+      <div className="bg-[#222831]">
         <div className="flex justify-center justify-items-center space-x-3 items-center px-4 ">
           <input
             type="text"
-            className="px-4 py-2  w-1/2 outline-none mt-10 bg-gray-800 rounded-lg font-sans text-gray-100"
+            className="px-4 py-2  w-4/5 outline-none mt-10 bg-[#31363F]   text-gray-100"
             value={searchInput}
-            placeholder="Search pokemon skills or stats "
+            placeholder="Search pokemon "
             onChange={(e) => setSearchInput(e.target.value)}
           />
           <button
-            className="px-4 py-2 border border-black bg-cyan-600 text-white rounded-md mt-10 font-sans"
+            className="px-4 py-2 border border-black bg-[#76ABAE] text-[#222831] text-xl mt-10 "
             onClick={() => {
               fetchInvidualData();
             }}
@@ -125,7 +126,7 @@ function Home() {
             ? filterdData.map((item, index) => {
                 return (
                   <Link
-                    className="bg-gray-800 py-2 rounded-lg p-10 font-sans  flex text-center justify-between w-3/5 justify-items-center mx-auto items-center "
+                    className="bg-[#31363F] py-2 text-gray-400 p-10   flex text-center justify-between w-4/5 justify-items-center mx-auto items-center "
                     key={index}
                     to={`/${item.name}`}
                   >
@@ -191,19 +192,21 @@ function Home() {
           )}
         </div> */}
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 bg-gray-900 items-center text-center justify-items-center justify-center">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 grid-cols-2  bg-[#222831] items-center text-center justify-items-center justify-center">
           {data.map((item, index) => {
             return (
               <div className="text-white p-4 text-center" key={index}>
                 <Link
                   to={`/${item.name}`}
-                  className="border border-black hover:text-gray-100 w-44 h-44 lg:w-72 lg:h-72 lg:text-4xl text-center px-7 py-10 flex justify-center items-center text-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-gray-100 rounded-md"
+                  className="border border-black hover:text-gray-100 text-center px-4 py-3 flex justify-center items-center text-xl bg-[#76ABAE] text-[#EEEEEE] rounded-3xl"
                   onClick={() => {
                     setSearchInput(item.name);
                     fetchInvidualData();
                   }}
                 >
-                  <h1 className="text-center">{item.name}</h1>
+                  <h1 className="text-center capitalize text-[#222831] ">
+                    {item.name}
+                  </h1>
                 </Link>
               </div>
             );
@@ -212,7 +215,7 @@ function Home() {
 
         <div className="flex justify-center space-x-5">
           <button
-            className="text-white bg-cyan-600 px-5 py-3 my-4 text-center font-sans"
+            className="text-white bg-[#31363F] px-5 py-3 my-4 text-center "
             onClick={() => {
               previousData();
             }}
@@ -220,7 +223,7 @@ function Home() {
             Previous
           </button>
           <button
-            className="text-white bg-cyan-600 px-5 py-3 my-4 text-center font-sans"
+            className="text-white bg-[#31363F] px-5 py-3 my-4 text-center "
             onClick={() => {
               nextData();
             }}

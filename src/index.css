@@ -19,8 +19,9 @@ a:hover {
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: Rubik Doodle Shadow , 'sans serif';
+  font-family: poppins;
   padding: 0;
+  background: #222831;
 }
 
 @tailwind base;
